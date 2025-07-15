@@ -45,8 +45,8 @@ export default function HeroSection()
     const downloadResume = () =>
     {
         const link = document.createElement('a');
-        link.href = '/kanshka-pasindu-Software Engineer';
-        link.download = 'Kanishak_Pasindu-resume.pdf';
+        link.href = '/kanshka-pasindu-Software Engineer.pdf';
+        link.download = 'kanshka-pasindu-Software Engineer.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
