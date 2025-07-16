@@ -105,8 +105,6 @@ export default function AboutSection()
                             <div className="space-y-6 text-gray-600 leading-relaxed">
                                 <p className="text-lg">
                                     I'm a full-stack developer with <strong className="text-black">4+ years of experience</strong> building scalable web applications.
-                                    Currently working as a Senior Full Stack Developer at Tech Solutions Inc., where I lead
-                                    development teams and architect complex systems.
                                 </p>
 
                                 <p className="text-lg">
