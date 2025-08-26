@@ -47,6 +47,7 @@ export default function FeaturedProjects() {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSectionsOpen, setIsSectionsOpen] = useState(false);
 
   const openProjectDialog = (project) => {
     setSelectedProject(project);
@@ -54,6 +55,7 @@ export default function FeaturedProjects() {
 
   const closeProjectDialog = () => {
     setSelectedProject(null);
+    setIsSectionsOpen(false);
   };
 
   useEffect(() => {
@@ -489,9 +491,9 @@ export default function FeaturedProjects() {
       demo: "https://language-limousine-new-p3to-2e66lzaje-kanishkapasis-projects.vercel.app",
       github: "Restricted due to client confidentiality",
       image: "🚐",
-      gradient: "from-green-500 via-teal-500 to-blue-500",
-      bgGradient: "from-green-50 to-blue-100",
-      darkBgGradient: "from-green-900/50 to-blue-900/50",
+      gradient: "from-yellow-400 via-red-400 to-pink-500",
+      bgGradient: "from-yellow-50 to-red-100",
+      darkBgGradient: "from-yellow-900/50 to-red-900/50",
       status: "Live",
       stars: "N/A",
       views: "N/A",
@@ -721,7 +723,7 @@ export default function FeaturedProjects() {
             <div className="relative flex h-full w-full flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-l-3xl shadow-2xl animate-in slide-in-from-right duration-500">
               {/* Header */}
               <div
-                className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden`}
+                className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden flex-1 h-full`}
               >
                 <div className="absolute inset-0 bg-black/20"></div>
                 <div className="relative z-10">
@@ -738,10 +740,10 @@ export default function FeaturedProjects() {
                       <X className="h-4 w-4 sm:h-5 sm:w-5" />
                     </Button>
                   </div>
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 animate-in slide-in-from-left duration-700 delay-100 leading-tight">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-0 animate-in slide-in-from-left duration-700 delay-100 leading-tight">
                     {selectedProject.title}
                   </h1>
-                  <p className="text-white/90 text-sm sm:text-base md:text-lg animate-in slide-in-from-left duration-700 delay-200 leading-relaxed">
+                  <p className="text-white text-sm sm:text-base md:text-lg animate-in slide-in-from-left duration-700 delay-200 leading-tight">
                     {selectedProject.detailedDescription}
                   </p>
 
@@ -767,92 +769,22 @@ export default function FeaturedProjects() {
                         {selectedProject.status}
                       </span>
                     </Badge>
+                    <div className="sm:ml-auto">
+                      <Button
+                        size="sm"
+                        onClick={() => setIsSectionsOpen(true)}
+                        className="border-white/40 text-white hover:bg-white/20"
+                      >
+                        <Sparkles className="mr-2 h-4 w-4" /> View Sections
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="flex-1 overflow-y-auto p-6 md:p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Features */}
-                  <div className="animate-in slide-in-from-left duration-700 delay-400">
-                    <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                      <Sparkles className="h-6 w-6 text-indigo-500" />
-                      Key Features
-                    </h3>
-                    <div className="space-y-4">
-                      {selectedProject.detailedFeatures.map(
-                        (feature, index) => (
-                          <div
-                            key={index}
-                            className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-in slide-in-from-left duration-700"
-                            style={{ animationDelay: `${500 + index * 100}ms` }}
-                          >
-                            <div
-                              className={`p-2 rounded-lg bg-gradient-to-br ${selectedProject.gradient}`}
-                            >
-                              <feature.icon className="h-5 w-5 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
-                                {feature.title}
-                              </h4>
-                              <p className="text-sm text-slate-600 dark:text-slate-300">
-                                {feature.desc}
-                              </p>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Tech & Highlights */}
-                  <div className="animate-in slide-in-from-right duration-700 delay-400">
-                    {/* Tech Stack */}
-                    <div className="mb-8">
-                      <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                        <Code2 className="h-6 w-6 text-indigo-500" />
-                        Tech Stack
-                      </h3>
-                      <div className="flex flex-wrap gap-3">
-                        {selectedProject.tech.map((tech, index) => (
-                          <Badge
-                            key={tech}
-                            variant="outline"
-                            className="text-sm px-3 py-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:scale-105 transition-all duration-300 animate-in zoom-in"
-                            style={{ animationDelay: `${600 + index * 50}ms` }}
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Highlights */}
-                    <div>
-                      <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                        <TrendingUp className="h-6 w-6 text-green-500" />
-                        Highlights
-                      </h3>
-                      <div className="space-y-3">
-                        {selectedProject.highlights.map((highlight, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-3 text-slate-600 dark:text-slate-300 animate-in slide-in-from-right duration-700"
-                            style={{ animationDelay: `${700 + index * 100}ms` }}
-                          >
-                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
-                            {highlight}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 animate-in slide-in-from-bottom duration-700 delay-500">
+              {/* Footer Actions - compact height */}
+              <div className="shrink-0 p-4 md:p-6 border-t border-slate-200 dark:border-slate-700">
+                <div className="flex gap-4">
                   <Button
                     size="lg"
                     className={`bg-gradient-to-r ${selectedProject.gradient} hover:shadow-lg hover:scale-105 text-white border-0 flex-1 transition-all duration-300`}
@@ -873,6 +805,124 @@ export default function FeaturedProjects() {
                     View Code
                   </Button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Nested Sections Modal */}
+      {selectedProject && isSectionsOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-300"
+            onClick={() => setIsSectionsOpen(false)}
+          ></div>
+
+          {/* Modal */}
+          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-300">
+            {/* Header */}
+            <div
+              className={`relative p-6 bg-gradient-to-br ${selectedProject.gradient} text-white`}
+            >
+              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="relative z-10 flex items-center justify-between">
+                <h2 className="text-xl sm:text-2xl font-bold">Sections</h2>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsSectionsOpen(false)}
+                  className="text-white hover:bg-white/20 rounded-full"
+                >
+                  <X className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 overflow-y-auto max-h-[65vh]">
+              {/* Key Features */}
+              <div className="mb-8">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
+                  <Sparkles className="h-5 w-5 text-indigo-500" /> Key Features
+                </h3>
+                <div className="space-y-3">
+                  {selectedProject.detailedFeatures.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
+                    >
+                      <div
+                        className={`p-2 rounded-lg bg-gradient-to-br ${selectedProject.gradient}`}
+                      >
+                        <feature.icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-slate-800 dark:text-white">
+                          {feature.title}
+                        </h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-300">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tech Stack */}
+              <div className="mb-8">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
+                  <Code2 className="h-5 w-5 text-indigo-500" /> Tech Stack
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.tech.map((tech, index) => (
+                    <Badge
+                      key={tech}
+                      variant="outline"
+                      className="text-xs px-3 py-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600"
+                      style={{ animationDelay: `${100 + index * 30}ms` }}
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
+              {/* Highlights */}
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
+                  <TrendingUp className="h-5 w-5 text-green-500" /> Highlights
+                </h3>
+                <div className="space-y-2">
+                  {selectedProject.highlights.map((highlight, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
+                    >
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
+                      <span className="text-sm">{highlight}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Actions */}
+              <div className="flex justify-end gap-3 mt-8 pt-4 border-t border-slate-200 dark:border-slate-700">
+                <Button
+                  variant="outline"
+                  onClick={() => setIsSectionsOpen(false)}
+                  className="border-slate-300 dark:border-slate-600"
+                >
+                  Close
+                </Button>
+                <Button
+                  onClick={() => setIsSectionsOpen(false)}
+                  className={`bg-gradient-to-r ${selectedProject.gradient} text-white border-0`}
+                >
+                  Done
+                </Button>
               </div>
             </div>
           </div>
