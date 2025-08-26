@@ -718,9 +718,9 @@ export default function FeaturedProjects() {
             onClick={closeProjectDialog}
           ></div>
 
-          {/* Sheet Container */}
-          <div className="absolute inset-y-0 right-0 flex h-full w-full max-w-2xl">
-            <div className="relative flex h-full w-full flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-l-3xl shadow-2xl animate-in slide-in-from-right duration-500">
+          {/* Centered Modal Container */}
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-500">
               {/* Header */}
               <div
                 className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden flex-1 h-full`}
