@@ -707,166 +707,172 @@ export default function FeaturedProjects() {
         </div>
       </section>
 
-      {/* Project Details Dialog */}
+      {/* Project Details Sheet (Right-side panel) */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-300"
             onClick={closeProjectDialog}
           ></div>
 
-          {/* Dialog */}
-          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-500">
-            {/* Header */}
-            <div
-              className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden`}
-            >
-              <div className="absolute inset-0 bg-black/20"></div>
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4 gap-4">
-                  <div className="text-3xl sm:text-4xl md:text-6xl animate-in slide-in-from-left duration-700 flex-shrink-0">
-                    {selectedProject.image}
+          {/* Sheet Container */}
+          <div className="absolute inset-y-0 right-0 flex h-full w-full max-w-2xl">
+            <div className="relative flex h-full w-full flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-l-3xl shadow-2xl animate-in slide-in-from-right duration-500">
+              {/* Header */}
+              <div
+                className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden`}
+              >
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="relative z-10">
+                  <div className="flex items-start justify-between mb-4 gap-4">
+                    <div className="text-3xl sm:text-4xl md:text-6xl animate-in slide-in-from-left duration-700 flex-shrink-0">
+                      {selectedProject.image}
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={closeProjectDialog}
+                      className="text-white hover:bg-white/20 rounded-full animate-in slide-in-from-right duration-700 flex-shrink-0"
+                    >
+                      <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </Button>
                   </div>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 animate-in slide-in-from-left duration-700 delay-100 leading-tight">
+                    {selectedProject.title}
+                  </h1>
+                  <p className="text-white/90 text-sm sm:text-base md:text-lg animate-in slide-in-from-left duration-700 delay-200 leading-relaxed">
+                    {selectedProject.detailedDescription}
+                  </p>
+
+                  {/* Project Stats - Responsive Layout */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-4 sm:mt-6 animate-in slide-in-from-left duration-700 delay-300">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                      <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm whitespace-nowrap">
+                          {selectedProject.duration}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
+                        <Users className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm whitespace-nowrap">
+                          {selectedProject.team}
+                        </span>
+                      </div>
+                    </div>
+                    <Badge className="bg-white/20 hover:bg-white/30 text-white border-0 w-fit">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-1 animate-pulse"></div>
+                      <span className="text-xs sm:text-sm">
+                        {selectedProject.status}
+                      </span>
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 overflow-y-auto p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Features */}
+                  <div className="animate-in slide-in-from-left duration-700 delay-400">
+                    <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
+                      <Sparkles className="h-6 w-6 text-indigo-500" />
+                      Key Features
+                    </h3>
+                    <div className="space-y-4">
+                      {selectedProject.detailedFeatures.map(
+                        (feature, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-in slide-in-from-left duration-700"
+                            style={{ animationDelay: `${500 + index * 100}ms` }}
+                          >
+                            <div
+                              className={`p-2 rounded-lg bg-gradient-to-br ${selectedProject.gradient}`}
+                            >
+                              <feature.icon className="h-5 w-5 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
+                                {feature.title}
+                              </h4>
+                              <p className="text-sm text-slate-600 dark:text-slate-300">
+                                {feature.desc}
+                              </p>
+                            </div>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Tech & Highlights */}
+                  <div className="animate-in slide-in-from-right duration-700 delay-400">
+                    {/* Tech Stack */}
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
+                        <Code2 className="h-6 w-6 text-indigo-500" />
+                        Tech Stack
+                      </h3>
+                      <div className="flex flex-wrap gap-3">
+                        {selectedProject.tech.map((tech, index) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="text-sm px-3 py-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:scale-105 transition-all duration-300 animate-in zoom-in"
+                            style={{ animationDelay: `${600 + index * 50}ms` }}
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Highlights */}
+                    <div>
+                      <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
+                        <TrendingUp className="h-6 w-6 text-green-500" />
+                        Highlights
+                      </h3>
+                      <div className="space-y-3">
+                        {selectedProject.highlights.map((highlight, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-3 text-slate-600 dark:text-slate-300 animate-in slide-in-from-right duration-700"
+                            style={{ animationDelay: `${700 + index * 100}ms` }}
+                          >
+                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
+                            {highlight}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 animate-in slide-in-from-bottom duration-700 delay-500">
                   <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={closeProjectDialog}
-                    className="text-white hover:bg-white/20 rounded-full animate-in slide-in-from-right duration-700 flex-shrink-0"
+                    size="lg"
+                    className={`bg-gradient-to-r ${selectedProject.gradient} hover:shadow-lg hover:scale-105 text-white border-0 flex-1 transition-all duration-300`}
+                    onClick={() => window.open(selectedProject.demo, "_blank")}
                   >
-                    <X className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    Live Demo
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 flex-1 transition-all duration-300"
+                    onClick={() =>
+                      window.open(selectedProject.github, "_blank")
+                    }
+                  >
+                    <Github className="mr-2 h-5 w-5" />
+                    View Code
                   </Button>
                 </div>
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 animate-in slide-in-from-left duration-700 delay-100 leading-tight">
-                  {selectedProject.title}
-                </h1>
-                <p className="text-white/90 text-sm sm:text-base md:text-lg animate-in slide-in-from-left duration-700 delay-200 leading-relaxed">
-                  {selectedProject.detailedDescription}
-                </p>
-
-                {/* Project Stats - Responsive Layout */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-4 sm:mt-6 animate-in slide-in-from-left duration-700 delay-300">
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                    <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
-                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm whitespace-nowrap">
-                        {selectedProject.duration}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
-                      <Users className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm whitespace-nowrap">
-                        {selectedProject.team}
-                      </span>
-                    </div>
-                  </div>
-                  <Badge className="bg-white/20 hover:bg-white/30 text-white border-0 w-fit">
-                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-1 animate-pulse"></div>
-                    <span className="text-xs sm:text-sm">
-                      {selectedProject.status}
-                    </span>
-                  </Badge>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-8 overflow-y-auto max-h-[60vh]">
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Features */}
-                <div className="animate-in slide-in-from-left duration-700 delay-400">
-                  <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                    <Sparkles className="h-6 w-6 text-indigo-500" />
-                    Key Features
-                  </h3>
-                  <div className="space-y-4">
-                    {selectedProject.detailedFeatures.map((feature, index) => (
-                      <div
-                        key={index}
-                        className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors animate-in slide-in-from-left duration-700"
-                        style={{ animationDelay: `${500 + index * 100}ms` }}
-                      >
-                        <div
-                          className={`p-2 rounded-lg bg-gradient-to-br ${selectedProject.gradient}`}
-                        >
-                          <feature.icon className="h-5 w-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
-                            {feature.title}
-                          </h4>
-                          <p className="text-sm text-slate-600 dark:text-slate-300">
-                            {feature.desc}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Tech & Highlights */}
-                <div className="animate-in slide-in-from-right duration-700 delay-400">
-                  {/* Tech Stack */}
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                      <Code2 className="h-6 w-6 text-indigo-500" />
-                      Tech Stack
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {selectedProject.tech.map((tech, index) => (
-                        <Badge
-                          key={tech}
-                          variant="outline"
-                          className="text-sm px-3 py-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600 hover:scale-105 transition-all duration-300 animate-in zoom-in duration-700"
-                          style={{ animationDelay: `${600 + index * 50}ms` }}
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Highlights */}
-                  <div>
-                    <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white flex items-center gap-2">
-                      <TrendingUp className="h-6 w-6 text-green-500" />
-                      Highlights
-                    </h3>
-                    <div className="space-y-3">
-                      {selectedProject.highlights.map((highlight, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-3 text-slate-600 dark:text-slate-300 animate-in slide-in-from-right duration-700"
-                          style={{ animationDelay: `${700 + index * 100}ms` }}
-                        >
-                          <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-4 mt-8 pt-6 border-t border-slate-200 dark:border-slate-700 animate-in slide-in-from-bottom duration-700 delay-500">
-                <Button
-                  size="lg"
-                  className={`bg-gradient-to-r ${selectedProject.gradient} hover:shadow-lg hover:scale-105 text-white border-0 flex-1 transition-all duration-300`}
-                  onClick={() => window.open(selectedProject.demo, "_blank")}
-                >
-                  <ExternalLink className="mr-2 h-5 w-5" />
-                  Live Demo
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 flex-1 transition-all duration-300"
-                  onClick={() => window.open(selectedProject.github, "_blank")}
-                >
-                  <Github className="mr-2 h-5 w-5" />
-                  View Code
-                </Button>
               </div>
             </div>
           </div>
