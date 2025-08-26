@@ -28,6 +28,10 @@ import {
   BarChart3,
   MapIcon,
   FileText,
+  MapPin,
+  Car,
+  Clock,
+  Radio,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
