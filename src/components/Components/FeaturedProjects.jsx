@@ -435,6 +435,72 @@ export default function FeaturedProjects() {
         "Regulatory Compliance for State Operations",
       ],
     },
+    {
+      title: "Language Limousine (Canada)",
+      description:
+        "Professional airport greeting and student transportation service offering real-time tracking and personalized support for international students arriving in Canada.",
+      detailedDescription:
+        "Language Limousine is a specialized transportation platform serving international students across Canada. I developed the complete frontend, backend, and deployment as a solo project. The system supports live student tracking, licensed vehicle coordination, 24-hour access to arrival details, and streamlined airport greeting services. Built with React.js, Node.js, Express.js, and MongoDB, and deployed on Vercel with an Oceangate domain, it delivers a secure, reliable, and transparent digital solution trusted by schools, parents, and agents.",
+      tech: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Vercel (Oceangate Domain)",
+      ],
+      features: [
+        "Live Student Tracking Portal",
+        "Licensed Vehicle Coordination",
+        "24-Hour Access & Emergency Info",
+        "Pre-booked Escorted Service",
+        "Real-Time Status Updates",
+      ],
+      detailedFeatures: [
+        {
+          icon: MapPin,
+          title: "Live Tracking Portal",
+          desc: "Real-time visibility for parents, agents, schools, and host families to monitor student status (greeted, in transit, delivered).",
+        },
+        {
+          icon: Car,
+          title: "Licensed Vehicle Coordination",
+          desc: "Ensures safe, professional transport with licensed vehicles and trained drivers.",
+        },
+        {
+          icon: Clock,
+          title: "24-Hour Access & Emergency Info",
+          desc: "Arrival packets include emergency contacts, maps, staff photos, and signage for smooth student recognition.",
+        },
+        {
+          icon: Calendar,
+          title: "Pre-Booked Escorted Service",
+          desc: "Services can be reserved months in advance, ensuring no-hassle coordination for institutions.",
+        },
+        {
+          icon: Radio,
+          title: "Real-Time Status Updates",
+          desc: "Continuous updates for stakeholders throughout the entire journey—from airport greeting to homestay delivery.",
+        },
+      ],
+      demo: "https://language-limousine-new-p3to-2e66lzaje-kanishkapasis-projects.vercel.app",
+      github: "Restricted due to client confidentiality",
+      image: "🚐",
+      gradient: "from-green-500 via-teal-500 to-blue-500",
+      bgGradient: "from-green-50 to-blue-100",
+      darkBgGradient: "from-green-900/50 to-blue-900/50",
+      status: "Live",
+      stars: "N/A",
+      views: "N/A",
+      duration: "4 weeks",
+      team: "Solo",
+      highlights: [
+        "End-to-end development (frontend, backend, deployment)",
+        "Live real-time tracking portal for students",
+        "24-hour support with emergency protocols",
+        "Trusted by Canadian institutions for student arrivals",
+        "Secure and optimized deployment on Vercel with Oceangate domain",
+      ],
+    },
   ];
 
   return (
