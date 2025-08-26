@@ -775,7 +775,8 @@ export default function FeaturedProjects() {
                         onClick={() => setIsSectionsOpen(true)}
                         className="border-white/40 text-white hover:bg-white/20"
                       >
-                        <Sparkles className="mr-2 h-4 w-4" /> View Sections
+                        <Sparkles className="mr-2 h-4 w-4" /> click to see other
+                        Sections
                       </Button>
                     </div>
                   </div>
