@@ -38,8 +38,8 @@ export default function HeroSection() {
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/kanshka-pasindu-Software Engineer.pdf";
-    link.download = "kanshka-pasindu-Software Engineer.pdf";
+    link.href = "/Kanishka Pasindu Mudithananda-Software Engineer.pdf";
+    link.download = "Kanishka Pasindu Mudithananda-Software Engineer.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -77,7 +77,7 @@ export default function HeroSection() {
                 <span className="inline-block animate-fade-in-up">
                   Hi, I'm{" "}
                 </span>
-                <span className="text-black relative inline-block animate-fade-in-up delay-300 ml-5 text-blue-600">
+                <span className=" relative inline-block animate-fade-in-up delay-300 ml-5 text-blue-600">
                   Kanishka
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 animate-scale-x delay-700"></div>
                 </span>

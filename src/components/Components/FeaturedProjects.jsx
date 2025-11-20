@@ -115,9 +115,8 @@ export default function FeaturedProjects() {
       demo: "https://demo.example.com",
       github: "https://github.com/kpdevSE/final_project.git",
       image: "🎉",
-      gradient: "from-green-500 via-blue-500 to-purple-500",
-      bgGradient: "from-green-50 to-purple-100",
-      darkBgGradient: "from-green-900/50 to-purple-900/50",
+      accent: "#2563eb",
+      accentSoft: "rgba(37, 99, 235, 0.08)",
       status: "Live",
       stars: "95",
       views: "1.7k",
@@ -184,9 +183,8 @@ export default function FeaturedProjects() {
       demo: "https://demo.example.com",
       github: "https://github.com/kpdevSE/pearly-travel.git",
       image: "🌍",
-      gradient: "from-yellow-400 via-red-400 to-pink-500",
-      bgGradient: "from-yellow-50 to-red-100",
-      darkBgGradient: "from-yellow-900/50 to-red-900/50",
+      accent: "#d97706",
+      accentSoft: "rgba(217, 119, 6, 0.1)",
       status: "Live",
       stars: "110",
       views: "2.6k",
@@ -244,9 +242,8 @@ export default function FeaturedProjects() {
       demo: "https://demo.example.com",
       github: "https://github.com/kpdevSE/english-academy-lms",
       image: "📚",
-      gradient: "from-indigo-500 via-blue-500 to-sky-500",
-      bgGradient: "from-indigo-50 to-sky-100",
-      darkBgGradient: "from-indigo-900/50 to-sky-900/50",
+      accent: "#4f46e5",
+      accentSoft: "rgba(79, 70, 229, 0.1)",
       status: "Live",
       stars: "142",
       views: "4.9k",
@@ -304,9 +301,8 @@ export default function FeaturedProjects() {
       demo: "",
       github: "",
       image: "🏥",
-      gradient: "from-green-500 via-teal-500 to-blue-500",
-      bgGradient: "from-green-50 to-blue-100",
-      darkBgGradient: "from-green-900/50 to-blue-900/50",
+      accent: "#15803d",
+      accentSoft: "rgba(21, 128, 61, 0.1)",
       status: "Delivered",
       stars: "N/A",
       views: "N/A",
@@ -364,9 +360,8 @@ export default function FeaturedProjects() {
       demo: "",
       github: "",
       image: "💪",
-      gradient: "from-orange-500 via-red-500 to-pink-500",
-      bgGradient: "from-orange-50 to-pink-100",
-      darkBgGradient: "from-orange-900/50 to-pink-900/50",
+      accent: "#dc2626",
+      accentSoft: "rgba(220, 38, 38, 0.1)",
       status: "Delivered",
       stars: "N/A",
       views: "N/A",
@@ -424,9 +419,8 @@ export default function FeaturedProjects() {
       demo: "",
       github: "",
       image: "💊",
-      gradient: "from-blue-500 via-purple-500 to-indigo-500",
-      bgGradient: "from-blue-50 to-indigo-100",
-      darkBgGradient: "from-blue-900/50 to-indigo-900/50",
+      accent: "#1d4ed8",
+      accentSoft: "rgba(29, 78, 216, 0.1)",
       status: "Delivered",
       stars: "N/A",
       views: "N/A",
@@ -491,9 +485,8 @@ export default function FeaturedProjects() {
       demo: "https://language-limousine-new-p3to-2e66lzaje-kanishkapasis-projects.vercel.app",
       github: "Restricted due to client confidentiality",
       image: "🚐",
-      gradient: "from-yellow-400 via-red-400 to-pink-500",
-      bgGradient: "from-yellow-50 to-red-100",
-      darkBgGradient: "from-yellow-900/50 to-red-900/50",
+      accent: "#c026d3",
+      accentSoft: "rgba(192, 38, 211, 0.1)",
       status: "Live",
       stars: "N/A",
       views: "N/A",
@@ -510,13 +503,13 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-blue-900">
+    <div className="min-h-screen bg-[#f6f8fb] dark:bg-slate-950">
       <section id="projects" className="py-24 px-4 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 -right-20 w-72 h-72 bg-gradient-to-br from-purple-400/10 to-pink-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-cyan-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-indigo-400/5 to-purple-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-10 -right-6 w-64 h-64 rounded-full bg-slate-200/40 dark:bg-slate-800/40 blur-3xl"></div>
+          <div className="absolute -bottom-6 -left-6 w-72 h-72 rounded-full bg-slate-200/30 dark:bg-slate-800/30 blur-3xl"></div>
+          <div className="absolute top-1/3 left-1/4 w-48 h-48 rounded-3xl bg-slate-200/25 dark:bg-slate-800/25 rotate-6"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -528,14 +521,14 @@ export default function FeaturedProjects() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-full border border-white/20 dark:border-slate-700/50 mb-6">
-              <Code2 className="h-4 w-4 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full border border-slate-200/70 dark:border-slate-800/70 mb-6 shadow-sm">
+              <Code2 className="h-4 w-4 text-slate-900 dark:text-white" />
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
                 Portfolio Showcase
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900 dark:from-white dark:via-indigo-200 dark:to-white bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
               Featured Projects
             </h2>
 
@@ -545,7 +538,7 @@ export default function FeaturedProjects() {
             </p>
 
             <div className="flex justify-center mt-8">
-              <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></div>
+              <div className="w-24 h-1 rounded-full bg-slate-900 dark:bg-white"></div>
             </div>
           </div>
 
@@ -554,11 +547,7 @@ export default function FeaturedProjects() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className={`group relative overflow-hidden transition-all duration-700 hover:scale-[1.02] hover:-translate-y-3 bg-gradient-to-br ${
-                  project.bgGradient
-                } dark:${
-                  project.darkBgGradient
-                } border-white/50 dark:border-slate-700/50 backdrop-blur-sm shadow-xl hover:shadow-2xl cursor-pointer ${
+                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/70 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -571,23 +560,19 @@ export default function FeaturedProjects() {
                   transitionDelay: `${index * 100}ms`,
                 }}
               >
-                {/* Animated gradient overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-all duration-700`}
-                ></div>
-
-                {/* Glowing border effect */}
-                <div className="absolute inset-0 rounded-lg">
-                  <div
-                    className={`absolute inset-0 rounded-lg bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-30 blur-sm transition-all duration-700`}
-                  ></div>
-                </div>
-
-                <CardHeader className="relative z-10">
+                <span
+                  className="absolute inset-x-0 top-0 h-1"
+                  style={{ backgroundColor: project.accent }}
+                ></span>
+                <CardHeader className="relative z-10 pb-4">
                   {/* Project image and status */}
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-3">
                     <div
-                      className={`text-5xl p-4 rounded-2xl bg-gradient-to-br ${project.gradient} bg-opacity-10 backdrop-blur-sm border border-white/20 dark:border-slate-700/30 group-hover:scale-110 transition-all duration-300`}
+                      className="text-5xl p-4 rounded-2xl border border-slate-200 dark:border-slate-700 transition-all duration-300 group-hover:scale-105"
+                      style={{
+                        backgroundColor: project.accentSoft,
+                        color: project.accent,
+                      }}
                     >
                       {project.image}
                     </div>
@@ -608,10 +593,13 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <CardTitle className="text-2xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                  <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white mb-2 transition-colors group-hover:text-slate-700 dark:group-hover:text-slate-200">
                     {project.title}
                     {hoveredProject === index && (
-                      <ArrowUpRight className="inline-block ml-2 h-5 w-5 text-indigo-500 animate-bounce" />
+                      <ArrowUpRight
+                        className="inline-block ml-2 h-5 w-5 animate-bounce"
+                        style={{ color: project.accent }}
+                      />
                     )}
                   </CardTitle>
 
@@ -620,12 +608,30 @@ export default function FeaturedProjects() {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="relative z-10 space-y-6">
+                <CardContent className="relative z-10 space-y-5 flex-1 flex flex-col">
+                  <div className="flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                      Duration · {project.duration}
+                    </span>
+                    <span className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                      Team · {project.team}
+                    </span>
+                    <span
+                      className="px-3 py-1 rounded-full"
+                      style={{
+                        backgroundColor: project.accentSoft,
+                        color: project.accent,
+                      }}
+                    >
+                      Status · {project.status}
+                    </span>
+                  </div>
+
                   {/* Stats */}
                   <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                        <Star className="h-4 w-4 text-amber-500 fill-current" />
                         <span>{project.stars}</span>
                       </div>
                       <div className="flex items-center gap-1">
@@ -633,13 +639,19 @@ export default function FeaturedProjects() {
                         <span>{project.views}</span>
                       </div>
                     </div>
-                    <TrendingUp className="h-4 w-4 text-green-500" />
+                    <TrendingUp
+                      className="h-4 w-4"
+                      style={{ color: project.accent }}
+                    />
                   </div>
 
                   {/* Tech Stack */}
                   <div>
                     <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-200 flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 text-indigo-500" />
+                      <Sparkles
+                        className="h-4 w-4"
+                        style={{ color: project.accent }}
+                      />
                       Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -663,23 +675,62 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
+                  <div>
+                    <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-200">
+                      Highlights
+                    </h4>
+                    <div className="space-y-2">
+                      {project.features.slice(0, 2).map((feature) => (
+                        <div
+                          key={feature}
+                          className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                        >
+                          <span
+                            className="mt-1 h-1.5 w-1.5 rounded-full"
+                            style={{ backgroundColor: project.accent }}
+                          ></span>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Click hint */}
-                  <div className="text-center pt-2">
-                    <span className="text-xs text-slate-500 dark:text-slate-400 group-hover:text-indigo-500 transition-colors">
-                      Click to view details
-                    </span>
+                  <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+                    <span>Tap for the full case study</span>
+                    <div
+                      className="w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 transition-colors group-hover:border-slate-400"
+                      style={{
+                        color: project.accent,
+                        borderColor: project.accent,
+                      }}
+                    >
+                      <ArrowUpRight className="h-5 w-5" />
+                    </div>
                   </div>
                 </CardContent>
 
                 {/* Hover effect particles */}
                 {hoveredProject === index && (
                   <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-6 right-6 w-2 h-2 bg-white rounded-full animate-ping"></div>
-                    <div className="absolute bottom-6 left-6 w-1 h-1 bg-indigo-400 rounded-full animate-pulse"></div>
-                    <div className="absolute top-1/3 left-8 w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce"></div>
                     <div
-                      className="absolute bottom-1/3 right-8 w-1 h-1 bg-pink-400 rounded-full animate-pulse"
-                      style={{ animationDelay: "0.5s" }}
+                      className="absolute top-6 right-6 w-2 h-2 rounded-full animate-ping"
+                      style={{ backgroundColor: project.accent }}
+                    ></div>
+                    <div
+                      className="absolute bottom-6 left-6 w-1 h-1 rounded-full animate-pulse"
+                      style={{ backgroundColor: project.accent }}
+                    ></div>
+                    <div
+                      className="absolute top-1/3 left-8 w-1.5 h-1.5 rounded-full animate-bounce"
+                      style={{ backgroundColor: project.accent }}
+                    ></div>
+                    <div
+                      className="absolute bottom-1/3 right-8 w-1 h-1 rounded-full animate-pulse"
+                      style={{
+                        animationDelay: "0.5s",
+                        backgroundColor: project.accent,
+                      }}
                     ></div>
                   </div>
                 )}
@@ -695,13 +746,13 @@ export default function FeaturedProjects() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-full border border-white/20 dark:border-slate-700/50">
-              <div className="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div className="w-2 h-2 bg-slate-900 dark:bg-white rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
                 More projects on GitHub
               </span>
               <div
-                className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"
+                className="w-2 h-2 bg-slate-900 dark:bg-white rounded-full animate-pulse"
                 style={{ animationDelay: "0.5s" }}
               ></div>
             </div>
@@ -720,75 +771,181 @@ export default function FeaturedProjects() {
 
           {/* Centered Modal Container */}
           <div className="absolute inset-0 flex items-center justify-center p-4">
-            <div className="relative w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-500">
-              {/* Header */}
-              <div
-                className={`relative p-4 sm:p-6 md:p-8 bg-gradient-to-br ${selectedProject.gradient} text-white overflow-hidden flex-1 h-full`}
-              >
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4 gap-4">
-                    <div className="text-3xl sm:text-4xl md:text-6xl animate-in slide-in-from-left duration-700 flex-shrink-0">
-                      {selectedProject.image}
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={closeProjectDialog}
-                      className="text-white hover:bg-white/20 rounded-full animate-in slide-in-from-right duration-700 flex-shrink-0"
-                    >
-                      <X className="h-4 w-4 sm:h-5 sm:w-5" />
-                    </Button>
+            <div className="relative w-full max-w-5xl h-[90vh] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-500 flex flex-col overflow-hidden">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+                <div className="flex items-center gap-4">
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+                    style={{
+                      backgroundColor: selectedProject.accentSoft,
+                      color: selectedProject.accent,
+                    }}
+                  >
+                    {selectedProject.image}
                   </div>
-                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-0 animate-in slide-in-from-left duration-700 delay-100 leading-tight">
-                    {selectedProject.title}
-                  </h1>
-                  <p className="text-white text-sm sm:text-base md:text-lg animate-in slide-in-from-left duration-700 delay-200 leading-tight">
-                    {selectedProject.detailedDescription}
-                  </p>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+                      Project case study
+                    </p>
+                    <h1 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
+                      {selectedProject.title}
+                    </h1>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Badge className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-0">
+                    {selectedProject.status}
+                  </Badge>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={closeProjectDialog}
+                    className="rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                  >
+                    <X className="h-5 w-5" />
+                  </Button>
+                </div>
+              </div>
 
-                  {/* Project Stats - Responsive Layout */}
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 mt-4 sm:mt-6 animate-in slide-in-from-left duration-700 delay-300">
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                      <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
-                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm whitespace-nowrap">
-                          {selectedProject.duration}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1.5 sm:gap-2 bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full">
-                        <Users className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm whitespace-nowrap">
-                          {selectedProject.team}
-                        </span>
+              <div className="flex-1 overflow-hidden">
+                <div className="grid h-full md:grid-cols-[1.6fr_1fr] gap-8 p-6 md:p-8 overflow-hidden">
+                  <div className="space-y-6 overflow-y-auto pr-2">
+                    <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {selectedProject.detailedDescription}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      {[
+                        { label: "Timeline", value: selectedProject.duration },
+                        { label: "Team", value: selectedProject.team },
+                        { label: "Status", value: selectedProject.status },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className="rounded-2xl border border-slate-100 dark:border-slate-800 px-4 py-3"
+                        >
+                          <p className="text-xs uppercase tracking-wide text-slate-400">
+                            {item.label}
+                          </p>
+                          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                            {item.value}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                        Impact metrics
+                      </h3>
+                      <div className="space-y-2">
+                        {selectedProject.highlights
+                          .slice(0, 4)
+                          .map((highlight) => (
+                            <div
+                              key={highlight}
+                              className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                            >
+                              <span
+                                className="mt-1 h-1.5 w-1.5 rounded-full"
+                                style={{
+                                  backgroundColor: selectedProject.accent,
+                                }}
+                              ></span>
+                              <span>{highlight}</span>
+                            </div>
+                          ))}
                       </div>
                     </div>
-                    <Badge className="bg-white/20 hover:bg-white/30 text-white border-0 w-fit">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white mr-1 animate-pulse"></div>
-                      <span className="text-xs sm:text-sm">
-                        {selectedProject.status}
-                      </span>
-                    </Badge>
-                    <div className="sm:ml-auto">
+
+                    <div>
+                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                        Product focus
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {selectedProject.features.map((feature) => (
+                          <div
+                            key={feature}
+                            className="rounded-2xl border border-slate-100 dark:border-slate-800 px-4 py-3 text-sm text-slate-600 dark:text-slate-200"
+                          >
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-5 overflow-y-auto pl-0 md:pl-2">
+                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5 space-y-3">
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
+                        Delivery snapshot
+                      </h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
+                          <span>Stars</span>
+                          <span className="font-semibold">
+                            {selectedProject.stars}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
+                          <span>Views</span>
+                          <span className="font-semibold">
+                            {selectedProject.views}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
+                          <span>Live status</span>
+                          <span className="font-semibold">
+                            {selectedProject.status}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5">
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                        Tech stack
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.tech.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="outline"
+                            className="border-slate-200 dark:border-slate-700"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5">
+                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
+                        Need the full breakdown?
+                      </h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                        Open the structured sections to explore detailed
+                        features, stack rationale, and success metrics.
+                      </p>
                       <Button
-                        size="sm"
+                        className="w-full text-white border-0"
+                        style={{ backgroundColor: selectedProject.accent }}
                         onClick={() => setIsSectionsOpen(true)}
-                        className="border-white/40 text-white hover:bg-white/20"
                       >
-                        <Sparkles className="mr-2 h-4 w-4" /> click to see other
-                        Sections
+                        <Sparkles className="mr-2 h-4 w-4" /> View detailed
+                        sections
                       </Button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Footer Actions - compact height */}
-              <div className="shrink-0 p-4 md:p-6 border-t border-slate-200 dark:border-slate-700">
-                <div className="flex gap-4">
+              <div className="shrink-0 px-6 py-4 border-t border-slate-100 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     size="lg"
-                    className={`bg-gradient-to-r ${selectedProject.gradient} hover:shadow-lg hover:scale-105 text-white border-0 flex-1 transition-all duration-300`}
+                    className="text-white border-0 flex-1 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+                    style={{ backgroundColor: selectedProject.accent }}
                     onClick={() => window.open(selectedProject.demo, "_blank")}
                   >
                     <ExternalLink className="mr-2 h-5 w-5" />
@@ -797,7 +954,7 @@ export default function FeaturedProjects() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:scale-105 flex-1 transition-all duration-300"
+                    className="border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:-translate-y-0.5 flex-1 transition-all duration-300"
                     onClick={() =>
                       window.open(selectedProject.github, "_blank")
                     }
@@ -825,9 +982,10 @@ export default function FeaturedProjects() {
           <div className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-300">
             {/* Header */}
             <div
-              className={`relative p-6 bg-gradient-to-br ${selectedProject.gradient} text-white`}
+              className="relative p-6 text-white"
+              style={{ backgroundColor: selectedProject.accent }}
             >
-              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="absolute inset-0 bg-black/15"></div>
               <div className="relative z-10 flex items-center justify-between">
                 <h2 className="text-xl sm:text-2xl font-bold">Sections</h2>
                 <Button
@@ -846,7 +1004,11 @@ export default function FeaturedProjects() {
               {/* Key Features */}
               <div className="mb-8">
                 <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <Sparkles className="h-5 w-5 text-indigo-500" /> Key Features
+                  <Sparkles
+                    className="h-5 w-5"
+                    style={{ color: selectedProject.accent }}
+                  />{" "}
+                  Key Features
                 </h3>
                 <div className="space-y-3">
                   {selectedProject.detailedFeatures.map((feature, index) => (
@@ -855,9 +1017,13 @@ export default function FeaturedProjects() {
                       className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
                     >
                       <div
-                        className={`p-2 rounded-lg bg-gradient-to-br ${selectedProject.gradient}`}
+                        className="p-2 rounded-lg"
+                        style={{ backgroundColor: selectedProject.accentSoft }}
                       >
-                        <feature.icon className="h-5 w-5 text-white" />
+                        <feature.icon
+                          className="h-5 w-5"
+                          style={{ color: selectedProject.accent }}
+                        />
                       </div>
                       <div>
                         <h4 className="font-medium text-slate-800 dark:text-white">
@@ -875,7 +1041,11 @@ export default function FeaturedProjects() {
               {/* Tech Stack */}
               <div className="mb-8">
                 <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <Code2 className="h-5 w-5 text-indigo-500" /> Tech Stack
+                  <Code2
+                    className="h-5 w-5"
+                    style={{ color: selectedProject.accent }}
+                  />{" "}
+                  Tech Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map((tech, index) => (
@@ -894,7 +1064,11 @@ export default function FeaturedProjects() {
               {/* Highlights */}
               <div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <TrendingUp className="h-5 w-5 text-green-500" /> Highlights
+                  <TrendingUp
+                    className="h-5 w-5"
+                    style={{ color: selectedProject.accent }}
+                  />{" "}
+                  Highlights
                 </h3>
                 <div className="space-y-2">
                   {selectedProject.highlights.map((highlight, index) => (
@@ -902,7 +1076,10 @@ export default function FeaturedProjects() {
                       key={index}
                       className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
                     >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-blue-500"></div>
+                      <div
+                        className="w-2 h-2 rounded-full"
+                        style={{ backgroundColor: selectedProject.accent }}
+                      ></div>
                       <span className="text-sm">{highlight}</span>
                     </div>
                   ))}
@@ -920,7 +1097,8 @@ export default function FeaturedProjects() {
                 </Button>
                 <Button
                   onClick={() => setIsSectionsOpen(false)}
-                  className={`bg-gradient-to-r ${selectedProject.gradient} text-white border-0`}
+                  className="text-white border-0"
+                  style={{ backgroundColor: selectedProject.accent }}
                 >
                   Done
                 </Button>
