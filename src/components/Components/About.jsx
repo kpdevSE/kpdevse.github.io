@@ -26,6 +26,7 @@ export default function AboutSection() {
     { name: "CSS", level: 90, color: "bg-pink-600" },
     { name: "Tailwind CSS", level: 80, color: "bg-sky-600" },
     { name: "Shadcn UI", level: 88, color: "bg-yellow-200" },
+    { name: "Github", level: 85, color: "bg-gray-600" },
   ];
 
   const stats = [
