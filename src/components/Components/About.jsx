@@ -112,11 +112,11 @@ export default function AboutSection() {
 
             {/* Right Column - Text Content */}
             <div>
-              <h3 className="text-3xl font-bold mb-6 font-mono text-white">
+              <h3 className="text-3xl font-bold mb-6 font-mono text-white text-center">
                 Passionate Developer & Problem Solver
               </h3>
 
-              <div className="space-y-6 text-slate-300 leading-relaxed">
+              <div className="space-y-6 text-slate-300 leading-relaxed text-center">
                 <p className="text-lg font-mono">
                   <span className="text-slate-500">//</span> I'm a full-stack
                   developer with{" "}

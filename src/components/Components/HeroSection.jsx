@@ -96,8 +96,8 @@ export default function HeroSection() {
             }`}
           >
             {/* Technical Badge */}
-            <div className="mb-8 sm:mb-10 align-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 dark:bg-slate-800/50 border border-slate-700/50 dark:border-slate-700/50 rounded-lg mb-8 backdrop-blur-sm">
+            <div className="mb-8 sm:mb-10">
+              <div className="items-center gap-2 px-4 py-2 bg-slate-900/50 dark:bg-slate-800/50 border border-slate-700/50 dark:border-slate-700/50 rounded-lg mb-8 backdrop-blur-sm text-center flex justify-center w-[270px] mx-auto">
                 <Code2 className="h-4 w-4 text-blue-400" />
                 <span className="text-sm font-mono font-medium text-slate-300 dark:text-slate-300">
                   &gt; portfolio.init()
@@ -119,13 +119,17 @@ export default function HeroSection() {
               </h1>
 
               {/* Typewriter role animation */}
-              <div className="h-16 sm:h-20 flex items-center justify-center mb-6 sm:mb-8">
-                <div className="flex items-center gap-3">
-                  <Terminal className="h-5 w-5 sm:h-6 sm:w-6 text-green-400 animate-fade-in-up delay-500" />
-                  <h2 className="text-xl sm:text-2xl md:text-3xl text-slate-300 dark:text-slate-300 font-mono font-medium animate-fade-in-up delay-500">
-                    <span className="text-slate-500">$</span>{" "}
+              <div className="min-h-[4.5rem] sm:min-h-[5rem] flex items-center justify-center mb-6 sm:mb-8 px-2">
+                <div className="flex flex-wrap sm:flex-nowrap items-center justify-center gap-2 sm:gap-3 text-center">
+                  <div className="flex items-center justify-center gap-2">
+                    <Terminal className="h-5 w-5 sm:h-6 sm:w-6 text-green-400 animate-fade-in-up delay-500" />
+                    <span className="text-slate-500 text-base sm:text-lg font-mono">
+                      $
+                    </span>
+                  </div>
+                  <h2 className="text-lg sm:text-2xl md:text-3xl text-slate-300 dark:text-slate-300 font-mono font-medium animate-fade-in-up delay-500 max-w-sm sm:max-w-none">
                     <span className="text-white">{displayedText}</span>
-                    <span className="inline-block w-0.5 h-6 sm:h-8 bg-blue-500 ml-1 animate-blink"></span>
+                    <span className="inline-block w-0.5 h-6 sm:h-8 bg-blue-500 ml-1 animate-blink align-middle"></span>
                   </h2>
                 </div>
               </div>

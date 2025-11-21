@@ -15,40 +15,74 @@ export default function SkillsSection() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const skills = {
-    Frontend: {
+    "Programming Languages": {
       techs: [
-        "React",
-        "Next.js",
+        "HTML5",
+        "CSS3",
+        "JavaScript (ES6+)",
         "TypeScript",
-        "Tailwind CSS",
-        "ShadCn UI",
-        "HTML/CSS",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "PHP",
+        "Java",
+        "Frontend Development",
+        "Backend Development",
+        "Full-Stack Development",
       ],
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50 dark:bg-blue-950/20",
     },
-    Backend: {
-      techs: ["Node.js", "Express.js", "REST APIs", "GraphQL"],
-      color: "from-green-500 to-emerald-500",
-      bgColor: "bg-green-50 dark:bg-green-950/20",
-    },
-    Database: {
-      techs: ["MongoDB", "PostgreSQL", "MySQL", "Firebase"],
+    Databases: {
+      techs: [
+        "MongoDB",
+        "MySQL",
+        "Firebase",
+        "Supabase",
+        "Database Design",
+        "CRUD Operations",
+      ],
       color: "from-purple-500 to-violet-500",
       bgColor: "bg-purple-50 dark:bg-purple-950/20",
     },
-    DevOps: {
-      techs: ["Docker", "GitHub Actions", "Linux"],
-      color: "from-orange-500 to-red-500",
+    "Version Control": {
+      techs: [
+        "Git",
+        "GitHub",
+        "Branching",
+        "Merging",
+        "Pull Requests",
+        "Code Collaboration",
+      ],
+      color: "from-emerald-500 to-green-500",
+      bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
+    },
+    Testing: {
+      techs: ["Postman"],
+      color: "from-orange-500 to-amber-500",
       bgColor: "bg-orange-50 dark:bg-orange-950/20",
+    },
+    Deployment: {
+      techs: [
+        "Vercel",
+        "Netlify",
+        "GitHub Pages",
+        "Cloud Deployment",
+        "CI/CD",
+        "Serverless Deployment",
+      ],
+      color: "from-pink-500 to-rose-500",
+      bgColor: "bg-pink-50 dark:bg-rose-950/20",
     },
   };
 
   const icons = {
-    Frontend: <Code className="h-8 w-8" />,
-    Backend: <Server className="h-8 w-8" />,
-    Database: <Database className="h-8 w-8" />,
-    DevOps: <Wrench className="h-8 w-8" />,
+    "Programming Languages": <Code className="h-8 w-8" />,
+    Databases: <Database className="h-8 w-8" />,
+    "Version Control": <Wrench className="h-8 w-8" />,
+    Testing: <Sparkles className="h-8 w-8" />,
+    Deployment: <Server className="h-8 w-8" />,
   };
 
   return (

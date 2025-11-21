@@ -893,11 +893,11 @@ export default function FeaturedProjects() {
                 </div>
               </div>
 
-              <div className="shrink-0 px-4 sm:px-6 py-4 sm:py-4 border-t border-slate-800/50 dark:border-slate-800 bg-slate-800/50 dark:bg-slate-900">
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-3">
+              <div className="shrink-0 px-4 sm:px-6 py-4 sm:py-4 border-t border-slate-800/50 dark:border-slate-800 bg-slate-800/50 dark:bg-slate-900 flex">
+                <div className="flex flex-row flex-wrap gap-3 sm:gap-3 w-full">
                   <Button
                     size="lg"
-                    className="!h-14 sm:!h-11 !rounded-xl sm:!rounded-lg bg-blue-600 hover:bg-blue-700 text-white border-0 flex-1 hover:opacity-90 transition-opacity text-sm sm:text-base !font-semibold !shadow-lg sm:!shadow-none active:scale-[0.98] sm:active:scale-100 w-full sm:w-auto font-mono"
+                    className="!h-12 sm:!h-11 !rounded-xl sm:!rounded-lg bg-blue-600 hover:bg-blue-700 text-white border-0 flex-1 min-w-[140px] hover:opacity-90 transition-opacity text-sm sm:text-base !font-semibold !shadow-lg sm:!shadow-none active:scale-[0.98] sm:active:scale-100 font-mono"
                     onClick={() => window.open(selectedProject.demo, "_blank")}
                   >
                     <ExternalLink className="mr-2 h-5 w-5 sm:h-5 sm:w-5" />
@@ -906,7 +906,7 @@ export default function FeaturedProjects() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="!h-14 sm:!h-11 !rounded-xl sm:!rounded-lg !border-2 border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-blue-500/50 flex-1 transition-all duration-200 text-sm sm:text-base !font-semibold !bg-slate-900/50 active:scale-[0.98] sm:active:scale-100 w-full sm:w-auto font-mono"
+                    className="!h-12 sm:!h-11 !rounded-xl sm:!rounded-lg !border-2 border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-blue-500/50 flex-1 min-w-[140px] transition-all duration-200 text-sm sm:text-base !font-semibold !bg-slate-900/50 active:scale-[0.98] sm:active:scale-100 font-mono"
                     onClick={() =>
                       window.open(selectedProject.github, "_blank")
                     }

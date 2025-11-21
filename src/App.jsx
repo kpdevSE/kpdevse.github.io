@@ -9,6 +9,7 @@ import Education from "./components/Components/Education";
 import Navigation from "./components/Components/Navigation";
 import Footer from "./components/Components/Footer";
 import FloatingSocialButtons from "./components/Components/FloatingSocialButtons";
+import ScrollToTopButton from "./components/Components/ScrollToTopButton";
 
 const App = () => {
   return (
@@ -42,6 +43,9 @@ const App = () => {
 
       {/* Floating Social Media Buttons */}
       <FloatingSocialButtons />
+
+      {/* Scroll To Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 };
