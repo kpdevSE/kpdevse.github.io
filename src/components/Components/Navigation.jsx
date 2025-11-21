@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import whiteLogo from "@/assets/whiteLogo.png";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -26,10 +27,13 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full bg-slate-950/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="font-mono font-bold text-xl text-blue-400 flex items-center gap-2">
-          <span className="text-green-400">$</span>
-          <span>KPDEV</span>
-        </div>
+        <a href="#hero" className="flex items-center gap-3 group">
+          <img
+            src={whiteLogo}
+            alt="KP Logo"
+            className="h-9 w-auto drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(56,189,248,0.8)] transition-all duration-300"
+          />
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-6">
