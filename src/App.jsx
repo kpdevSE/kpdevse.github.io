@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import ContactSection from './components/Components/Contact';
-import SkillsSection from './components/Components/Skills';
-import FeaturedProjects from './components/Components/FeaturedProjects';
-import HeroSection from './components/Components/HeroSection';
-import AboutSection from './components/Components/About';
-import ExperianceSection from './components/Components/ExperianceSection';
-import Education from './components/Components/Education';
-import Navigation from './components/Components/Navigation';
-import Footer from './components/Components/Footer';
-import FloatingWhatsAppButton from './components/Components/Floatingwtsapp';
+import React, { useState } from "react";
+import ContactSection from "./components/Components/Contact";
+import SkillsSection from "./components/Components/Skills";
+import FeaturedProjects from "./components/Components/FeaturedProjects";
+import HeroSection from "./components/Components/HeroSection";
+import AboutSection from "./components/Components/About";
+import ExperianceSection from "./components/Components/ExperianceSection";
+import Education from "./components/Components/Education";
+import Navigation from "./components/Components/Navigation";
+import Footer from "./components/Components/Footer";
+import FloatingSocialButtons from "./components/Components/FloatingSocialButtons";
 
-const App = () =>
-{
+const App = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Navigation */}
@@ -41,8 +40,8 @@ const App = () =>
       {/* Footer */}
       <Footer />
 
-      {/* Floating Whats App Button */}
-      <FloatingWhatsAppButton />
+      {/* Floating Social Media Buttons */}
+      <FloatingSocialButtons />
     </div>
   );
 };

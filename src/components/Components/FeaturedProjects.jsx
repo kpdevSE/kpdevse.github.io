@@ -32,6 +32,8 @@ import {
   Car,
   Clock,
   Radio,
+  Package,
+  AlertTriangle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -391,27 +393,27 @@ export default function FeaturedProjects() {
       ],
       detailedFeatures: [
         {
-          icon: "Shield",
+          icon: Shield,
           title: "Role-Based Access Control",
           desc: "Secure dual-role system with admin privileges for user management and pharmacist access for daily operations.",
         },
         {
-          icon: "Package",
+          icon: Package,
           title: "Medicine Inventory Control",
           desc: "Complete CRUD operations for medicine management with real-time stock tracking and automatic reorder alerts.",
         },
         {
-          icon: "TrendingUp",
+          icon: TrendingUp,
           title: "Real-Time Analytics",
           desc: "Interactive bar charts displaying medicine validity status, expiration tracking, and inventory levels with live data updates.",
         },
         {
-          icon: "Users",
+          icon: Users,
           title: "User Management System",
           desc: "Comprehensive admin dashboard for user registration, role assignment, and profile management with real-time user statistics.",
         },
         {
-          icon: "AlertTriangle",
+          icon: AlertTriangle,
           title: "Expiration Monitoring",
           desc: "Automated alerts and visual indicators for expired and near-expiry medicines with detailed reporting capabilities.",
         },
@@ -503,15 +505,14 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f6f8fb] dark:bg-slate-950">
+    <div className="min-h-screen bg-slate-950 dark:bg-slate-950">
       <section id="projects" className="py-24 px-4 relative overflow-hidden">
-        {/* Background decorative elements */}
+        {/* Technical grid background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 -right-6 w-64 h-64 rounded-full bg-slate-200/40 dark:bg-slate-800/40 blur-3xl"></div>
-          <div className="absolute -bottom-6 -left-6 w-72 h-72 rounded-full bg-slate-200/30 dark:bg-slate-800/30 blur-3xl"></div>
-          <div className="absolute top-1/3 left-1/4 w-48 h-48 rounded-3xl bg-slate-200/25 dark:bg-slate-800/25 rotate-6"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
         </div>
-
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Header */}
           <div
@@ -521,24 +522,24 @@ export default function FeaturedProjects() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-900 rounded-full border border-slate-200/70 dark:border-slate-800/70 mb-6 shadow-sm">
-              <Code2 className="h-4 w-4 text-slate-900 dark:text-white" />
-              <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                Portfolio Showcase
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 dark:bg-slate-800/50 border border-slate-700/50 dark:border-slate-700/50 rounded-lg backdrop-blur-sm mb-6">
+              <Code2 className="h-4 w-4 text-blue-400" />
+              <span className="text-sm font-mono font-medium text-slate-300 dark:text-slate-300">
+                &gt; projects.load()
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold font-mono text-white mb-4">
               Featured Projects
             </h2>
 
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Showcasing innovative solutions built with modern technologies and
-              best practices
+            <p className="text-xl text-slate-300 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-mono">
+              <span className="text-slate-500">//</span> Showcasing innovative
+              solutions built with modern technologies and best practices
             </p>
 
             <div className="flex justify-center mt-8">
-              <div className="w-24 h-1 rounded-full bg-slate-900 dark:bg-white"></div>
+              <div className="w-24 h-0.5 bg-blue-500"></div>
             </div>
           </div>
 
@@ -547,7 +548,7 @@ export default function FeaturedProjects() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className={`group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/70 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer ${
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border border-slate-700/50 dark:border-slate-700/50 bg-slate-900/50 dark:bg-slate-900/50 shadow-sm hover:shadow-lg hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 cursor-pointer backdrop-blur-sm ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -560,20 +561,11 @@ export default function FeaturedProjects() {
                   transitionDelay: `${index * 100}ms`,
                 }}
               >
-                <span
-                  className="absolute inset-x-0 top-0 h-1"
-                  style={{ backgroundColor: project.accent }}
-                ></span>
+                <div className="absolute inset-x-0 top-0 h-0.5 bg-blue-500"></div>
                 <CardHeader className="relative z-10 pb-4">
                   {/* Project image and status */}
                   <div className="flex items-start justify-between mb-3">
-                    <div
-                      className="text-5xl p-4 rounded-2xl border border-slate-200 dark:border-slate-700 transition-all duration-300 group-hover:scale-105"
-                      style={{
-                        backgroundColor: project.accentSoft,
-                        color: project.accent,
-                      }}
-                    >
+                    <div className="text-4xl p-3 rounded-xl border border-slate-700/50 transition-all duration-300 group-hover:scale-105 bg-slate-800/50 group-hover:border-blue-500/50">
                       {project.image}
                     </div>
                     <div className="flex flex-col items-end gap-2">
@@ -583,75 +575,64 @@ export default function FeaturedProjects() {
                         }
                         className={`${
                           project.status === "Live"
-                            ? "bg-green-500 hover:bg-green-600"
-                            : "bg-orange-500 hover:bg-orange-600"
-                        } text-white border-0 shadow-lg`}
+                            ? "bg-emerald-600 hover:bg-emerald-700"
+                            : "bg-amber-600 hover:bg-amber-700"
+                        } text-white border-0`}
                       >
-                        <div className="w-2 h-2 rounded-full bg-white mr-1 animate-pulse"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-white mr-1.5"></div>
                         {project.status}
                       </Badge>
                     </div>
                   </div>
 
-                  <CardTitle className="text-2xl font-bold text-slate-900 dark:text-white mb-2 transition-colors group-hover:text-slate-700 dark:group-hover:text-slate-200">
+                  <CardTitle className="text-xl font-semibold font-mono text-white mb-2 transition-colors group-hover:text-blue-400">
                     {project.title}
                     {hoveredProject === index && (
-                      <ArrowUpRight
-                        className="inline-block ml-2 h-5 w-5 animate-bounce"
-                        style={{ color: project.accent }}
-                      />
+                      <ArrowUpRight className="inline-block ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-blue-400" />
                     )}
                   </CardTitle>
 
-                  <CardDescription className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <CardDescription className="text-slate-300 dark:text-slate-300 leading-relaxed font-mono text-sm">
+                    <span className="text-slate-500">//</span>{" "}
                     {project.description}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="relative z-10 space-y-5 flex-1 flex flex-col">
-                  <div className="flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
-                    <span className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                  <div className="flex flex-wrap gap-2 text-xs">
+                    <span className="px-2.5 py-1 rounded-md border border-slate-700/50 bg-slate-800/50 text-slate-300 font-mono">
                       Duration · {project.duration}
                     </span>
-                    <span className="px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                    <span className="px-2.5 py-1 rounded-md border border-slate-700/50 bg-slate-800/50 text-slate-300 font-mono">
                       Team · {project.team}
                     </span>
-                    <span
-                      className="px-3 py-1 rounded-full"
-                      style={{
-                        backgroundColor: project.accentSoft,
-                        color: project.accent,
-                      }}
-                    >
+                    <span className="px-2.5 py-1 rounded-md border border-blue-500/50 bg-blue-500/10 text-blue-400 font-mono font-medium">
                       Status · {project.status}
                     </span>
                   </div>
 
                   {/* Stats */}
-                  <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+                  {/* <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
                     <div className="flex items-center gap-4">
-                      <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 text-amber-500 fill-current" />
-                        <span>{project.stars}</span>
+                      <div className="flex items-center gap-1.5">
+                        <Star className="h-4 w-4 text-amber-500 fill-amber-500" />
+                        <span className="font-medium">{project.stars}</span>
                       </div>
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-1.5">
                         <Eye className="h-4 w-4" />
-                        <span>{project.views}</span>
+                        <span className="font-medium">{project.views}</span>
                       </div>
                     </div>
                     <TrendingUp
-                      className="h-4 w-4"
+                      className="h-4 w-4 text-slate-400"
                       style={{ color: project.accent }}
                     />
-                  </div>
+                  </div> */}
 
                   {/* Tech Stack */}
                   <div>
-                    <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-200 flex items-center gap-2">
-                      <Sparkles
-                        className="h-4 w-4"
-                        style={{ color: project.accent }}
-                      />
+                    <h4 className="font-semibold mb-3 font-mono text-white flex items-center gap-2 text-sm">
+                      <Code2 className="h-4 w-4 text-blue-400" />
                       Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -659,7 +640,7 @@ export default function FeaturedProjects() {
                         <Badge
                           key={tech}
                           variant="outline"
-                          className="text-xs bg-white/70 dark:bg-slate-800/70 border-slate-200 dark:border-slate-600 hover:bg-white dark:hover:bg-slate-700 transition-all duration-300 hover:scale-105"
+                          className="text-xs bg-slate-800/50 border-slate-700/50 text-slate-300 hover:bg-slate-800 hover:border-blue-500/50 transition-colors font-mono"
                         >
                           {tech}
                         </Badge>
@@ -667,7 +648,7 @@ export default function FeaturedProjects() {
                       {project.tech.length > 3 && (
                         <Badge
                           variant="outline"
-                          className="text-xs bg-white/70 dark:bg-slate-800/70 border-slate-200 dark:border-slate-600"
+                          className="text-xs bg-slate-800/50 border-slate-700/50 text-slate-300 font-mono"
                         >
                           +{project.tech.length - 3}
                         </Badge>
@@ -675,65 +656,36 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <div>
-                    <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-200">
-                      Highlights
+                  {/* <div>
+                    <h4 className="font-semibold mb-3 text-slate-700 dark:text-slate-200 text-sm">
+                      Key Features
                     </h4>
                     <div className="space-y-2">
                       {project.features.slice(0, 2).map((feature) => (
                         <div
                           key={feature}
-                          className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                          className="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300"
                         >
-                          <span
-                            className="mt-1 h-1.5 w-1.5 rounded-full"
+                          <div
+                            className="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0"
                             style={{ backgroundColor: project.accent }}
-                          ></span>
-                          <span>{feature}</span>
+                          ></div>
+                          <span className="leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
 
                   {/* Click hint */}
-                  <div className="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
-                    <span>Tap for the full case study</span>
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 dark:border-slate-700 transition-colors group-hover:border-slate-400"
-                      style={{
-                        color: project.accent,
-                        borderColor: project.accent,
-                      }}
-                    >
-                      <ArrowUpRight className="h-5 w-5" />
+                  <div className="mt-auto pt-4 border-t border-slate-700/50 dark:border-slate-700/50 flex items-center justify-between text-sm text-slate-400 dark:text-slate-400">
+                    <span className="font-mono font-medium">
+                      &gt; view.details()
+                    </span>
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center border border-blue-500/50 bg-blue-500/10 text-blue-400 transition-all group-hover:scale-105 group-hover:bg-blue-500/20">
+                      <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>
                 </CardContent>
-
-                {/* Hover effect particles */}
-                {hoveredProject === index && (
-                  <div className="absolute inset-0 pointer-events-none">
-                    <div
-                      className="absolute top-6 right-6 w-2 h-2 rounded-full animate-ping"
-                      style={{ backgroundColor: project.accent }}
-                    ></div>
-                    <div
-                      className="absolute bottom-6 left-6 w-1 h-1 rounded-full animate-pulse"
-                      style={{ backgroundColor: project.accent }}
-                    ></div>
-                    <div
-                      className="absolute top-1/3 left-8 w-1.5 h-1.5 rounded-full animate-bounce"
-                      style={{ backgroundColor: project.accent }}
-                    ></div>
-                    <div
-                      className="absolute bottom-1/3 right-8 w-1 h-1 rounded-full animate-pulse"
-                      style={{
-                        animationDelay: "0.5s",
-                        backgroundColor: project.accent,
-                      }}
-                    ></div>
-                  </div>
-                )}
               </Card>
             ))}
           </div>
@@ -746,15 +698,10 @@ export default function FeaturedProjects() {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
-              <div className="w-2 h-2 bg-slate-900 dark:bg-white rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                More projects on GitHub
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900/50 dark:bg-slate-900/50 rounded-lg border border-slate-700/50 dark:border-slate-700/50 backdrop-blur-sm">
+              <span className="text-sm font-mono font-medium text-slate-300 dark:text-slate-300">
+                &gt; more.projects()
               </span>
-              <div
-                className="w-2 h-2 bg-slate-900 dark:bg-white rounded-full animate-pulse"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
             </div>
           </div>
         </div>
@@ -770,51 +717,52 @@ export default function FeaturedProjects() {
           ></div>
 
           {/* Centered Modal Container */}
-          <div className="absolute inset-0 flex items-center justify-center p-4">
-            <div className="relative w-full max-w-5xl h-[90vh] bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-500 flex flex-col overflow-hidden">
-              <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
-                    style={{
-                      backgroundColor: selectedProject.accentSoft,
-                      color: selectedProject.accent,
-                    }}
-                  >
+          <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4">
+            <div className="relative w-full max-w-5xl h-[95vh] sm:h-[90vh] bg-slate-950 dark:bg-slate-950 border border-slate-700/50 dark:border-slate-700/50 rounded-xl sm:rounded-2xl shadow-xl animate-in zoom-in-95 duration-300 flex flex-col overflow-hidden">
+              <div className="flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 border-b border-slate-700/50 dark:border-slate-700/50 bg-slate-900/50 dark:bg-slate-900/50 flex-shrink-0 backdrop-blur-sm">
+                <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-xl sm:text-2xl border border-slate-700/50 bg-slate-800/50 flex-shrink-0">
                     {selectedProject.image}
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                      Project case study
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono font-medium mb-1 hidden sm:block">
+                      &gt; project.details()
                     </p>
-                    <h1 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
+                    <h1 className="text-lg sm:text-xl md:text-2xl font-semibold font-mono text-white truncate">
                       {selectedProject.title}
                     </h1>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Badge className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-0">
+                <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+                  <Badge
+                    className={`${
+                      selectedProject.status === "Live"
+                        ? "bg-emerald-600 hover:bg-emerald-700"
+                        : "bg-amber-600 hover:bg-amber-700"
+                    } text-white border-0 text-xs`}
+                  >
                     {selectedProject.status}
                   </Badge>
                   <Button
                     variant="ghost"
                     size="icon"
                     onClick={closeProjectDialog}
-                    className="rounded-full text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                    className="rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 h-8 w-8 sm:h-10 sm:w-10"
                   >
-                    <X className="h-5 w-5" />
+                    <X className="h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </div>
               </div>
 
-              <div className="flex-1 overflow-hidden">
-                <div className="grid h-full md:grid-cols-[1.6fr_1fr] gap-8 p-6 md:p-8 overflow-hidden">
-                  <div className="space-y-6 overflow-y-auto pr-2">
-                    <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="flex-1 overflow-y-auto">
+                <div className="flex flex-col lg:grid lg:grid-cols-[1.6fr_1fr] gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
+                  <div className="space-y-4 sm:space-y-6 order-1 lg:order-1">
+                    <p className="text-sm sm:text-base text-slate-300 dark:text-slate-300 leading-relaxed font-mono">
+                      <span className="text-slate-500">//</span>{" "}
                       {selectedProject.detailedDescription}
                     </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
                       {[
                         { label: "Timeline", value: selectedProject.duration },
                         { label: "Team", value: selectedProject.team },
@@ -822,12 +770,12 @@ export default function FeaturedProjects() {
                       ].map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-slate-100 dark:border-slate-800 px-4 py-3"
+                          className="rounded-lg border border-slate-700/50 bg-slate-800/50 px-4 py-3"
                         >
-                          <p className="text-xs uppercase tracking-wide text-slate-400">
+                          <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400 font-mono font-medium mb-1">
                             {item.label}
                           </p>
-                          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                          <p className="text-sm font-semibold font-mono text-white">
                             {item.value}
                           </p>
                         </div>
@@ -835,38 +783,37 @@ export default function FeaturedProjects() {
                     </div>
 
                     <div>
-                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                        Impact metrics
+                      <h3 className="text-sm font-semibold font-mono text-white mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-blue-400" />
+                        Impact Metrics
                       </h3>
-                      <div className="space-y-2">
+                      <div className="space-y-2.5">
                         {selectedProject.highlights
                           .slice(0, 4)
                           .map((highlight) => (
                             <div
                               key={highlight}
-                              className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                              className="flex items-start gap-2.5 sm:gap-3 text-sm text-slate-300 dark:text-slate-300 font-mono"
                             >
-                              <span
-                                className="mt-1 h-1.5 w-1.5 rounded-full"
-                                style={{
-                                  backgroundColor: selectedProject.accent,
-                                }}
-                              ></span>
-                              <span>{highlight}</span>
+                              <div className="mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 bg-blue-500"></div>
+                              <span className="leading-relaxed">
+                                {highlight}
+                              </span>
                             </div>
                           ))}
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                        Product focus
+                      <h3 className="text-sm font-semibold font-mono text-white mb-3 flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-blue-400" />
+                        Key Features
                       </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {selectedProject.features.map((feature) => (
                           <div
                             key={feature}
-                            className="rounded-2xl border border-slate-100 dark:border-slate-800 px-4 py-3 text-sm text-slate-600 dark:text-slate-200"
+                            className="rounded-lg border border-slate-700/50 bg-slate-800/50 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-slate-300 dark:text-slate-200 font-mono"
                           >
                             {feature}
                           </div>
@@ -875,43 +822,50 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <div className="space-y-5 overflow-y-auto pl-0 md:pl-2">
-                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5 space-y-3">
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white">
-                        Delivery snapshot
+                  <div className="space-y-4 order-2 lg:order-2 lg:overflow-y-auto lg:pl-2">
+                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 sm:p-5 space-y-3">
+                      <h4 className="text-sm font-semibold font-mono text-white">
+                        Project Stats
                       </h4>
                       <div className="space-y-3">
-                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                          <span>Stars</span>
-                          <span className="font-semibold">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-slate-400 dark:text-slate-400 font-mono">
+                            Stars
+                          </span>
+                          <span className="font-semibold font-mono text-white">
                             {selectedProject.stars}
                           </span>
                         </div>
-                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                          <span>Views</span>
-                          <span className="font-semibold">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-slate-400 dark:text-slate-400 font-mono">
+                            Views
+                          </span>
+                          <span className="font-semibold font-mono text-white">
                             {selectedProject.views}
                           </span>
                         </div>
-                        <div className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-300">
-                          <span>Live status</span>
-                          <span className="font-semibold">
+                        <div className="flex items-center justify-between text-sm">
+                          <span className="text-slate-400 dark:text-slate-400 font-mono">
+                            Status
+                          </span>
+                          <span className="font-semibold font-mono text-white">
                             {selectedProject.status}
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5">
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                        Tech stack
+                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 sm:p-5">
+                      <h4 className="text-sm font-semibold font-mono text-white mb-3 flex items-center gap-2">
+                        <Code2 className="h-4 w-4 text-blue-400" />
+                        Tech Stack
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.tech.map((tech) => (
                           <Badge
                             key={tech}
                             variant="outline"
-                            className="border-slate-200 dark:border-slate-700"
+                            className="text-xs bg-slate-900 border-slate-700/50 text-slate-300 font-mono"
                           >
                             {tech}
                           </Badge>
@@ -919,47 +873,45 @@ export default function FeaturedProjects() {
                       </div>
                     </div>
 
-                    <div className="rounded-2xl border border-slate-100 dark:border-slate-800 p-5">
-                      <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">
-                        Need the full breakdown?
+                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 sm:p-5">
+                      <h4 className="text-sm font-semibold font-mono text-white mb-2">
+                        Detailed Breakdown
                       </h4>
-                      <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
-                        Open the structured sections to explore detailed
-                        features, stack rationale, and success metrics.
+                      <p className="text-sm text-slate-300 dark:text-slate-300 mb-4 leading-relaxed font-mono">
+                        <span className="text-slate-500">//</span> Explore
+                        comprehensive features, technical details, and success
+                        metrics.
                       </p>
                       <Button
-                        className="w-full text-white border-0"
-                        style={{ backgroundColor: selectedProject.accent }}
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white border-0 hover:opacity-90 transition-opacity"
                         onClick={() => setIsSectionsOpen(true)}
                       >
-                        <Sparkles className="mr-2 h-4 w-4" /> View detailed
-                        sections
+                        <Sparkles className="mr-2 h-4 w-4" /> View Full Details
                       </Button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="shrink-0 px-6 py-4 border-t border-slate-100 dark:border-slate-800">
-                <div className="flex flex-col sm:flex-row gap-3">
+              <div className="shrink-0 px-4 sm:px-6 py-4 sm:py-4 border-t border-slate-800/50 dark:border-slate-800 bg-slate-800/50 dark:bg-slate-900">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-3">
                   <Button
                     size="lg"
-                    className="text-white border-0 flex-1 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-                    style={{ backgroundColor: selectedProject.accent }}
+                    className="!h-14 sm:!h-11 !rounded-xl sm:!rounded-lg bg-blue-600 hover:bg-blue-700 text-white border-0 flex-1 hover:opacity-90 transition-opacity text-sm sm:text-base !font-semibold !shadow-lg sm:!shadow-none active:scale-[0.98] sm:active:scale-100 w-full sm:w-auto font-mono"
                     onClick={() => window.open(selectedProject.demo, "_blank")}
                   >
-                    <ExternalLink className="mr-2 h-5 w-5" />
+                    <ExternalLink className="mr-2 h-5 w-5 sm:h-5 sm:w-5" />
                     Live Demo
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 hover:-translate-y-0.5 flex-1 transition-all duration-300"
+                    className="!h-14 sm:!h-11 !rounded-xl sm:!rounded-lg !border-2 border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-blue-500/50 flex-1 transition-all duration-200 text-sm sm:text-base !font-semibold !bg-slate-900/50 active:scale-[0.98] sm:active:scale-100 w-full sm:w-auto font-mono"
                     onClick={() =>
                       window.open(selectedProject.github, "_blank")
                     }
                   >
-                    <Github className="mr-2 h-5 w-5" />
+                    <Github className="mr-2 h-5 w-5 sm:h-5 sm:w-5" />
                     View Code
                   </Button>
                 </div>
@@ -979,20 +931,19 @@ export default function FeaturedProjects() {
           ></div>
 
           {/* Modal */}
-          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden bg-white dark:bg-slate-900 rounded-3xl shadow-2xl animate-in zoom-in-95 duration-300">
+          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden bg-slate-950 dark:bg-slate-950 rounded-2xl shadow-xl border border-slate-700/50 dark:border-slate-700/50 animate-in zoom-in-95 duration-300">
             {/* Header */}
-            <div
-              className="relative p-6 text-white"
-              style={{ backgroundColor: selectedProject.accent }}
-            >
-              <div className="absolute inset-0 bg-black/15"></div>
+            <div className="relative p-6 text-white border-b border-slate-700/50 bg-slate-900/50">
+              <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-500"></div>
               <div className="relative z-10 flex items-center justify-between">
-                <h2 className="text-xl sm:text-2xl font-bold">Sections</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold font-mono">
+                  Detailed Sections
+                </h2>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setIsSectionsOpen(false)}
-                  className="text-white hover:bg-white/20 rounded-full"
+                  className="text-slate-300 hover:bg-slate-800 hover:text-white rounded-lg"
                 >
                   <X className="h-5 w-5" />
                 </Button>
@@ -1003,33 +954,24 @@ export default function FeaturedProjects() {
             <div className="p-6 overflow-y-auto max-h-[65vh]">
               {/* Key Features */}
               <div className="mb-8">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <Sparkles
-                    className="h-5 w-5"
-                    style={{ color: selectedProject.accent }}
-                  />{" "}
+                <h3 className="text-lg sm:text-xl font-semibold font-mono mb-4 flex items-center gap-2 text-white">
+                  <Sparkles className="h-5 w-5 text-blue-400" />
                   Key Features
                 </h3>
                 <div className="space-y-3">
                   {selectedProject.detailedFeatures.map((feature, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl"
+                      className="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700/50"
                     >
-                      <div
-                        className="p-2 rounded-lg"
-                        style={{ backgroundColor: selectedProject.accentSoft }}
-                      >
-                        <feature.icon
-                          className="h-5 w-5"
-                          style={{ color: selectedProject.accent }}
-                        />
+                      <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-700 flex-shrink-0">
+                        <feature.icon className="h-5 w-5 text-blue-400" />
                       </div>
-                      <div>
-                        <h4 className="font-medium text-slate-800 dark:text-white">
+                      <div className="flex-1">
+                        <h4 className="font-semibold font-mono text-white mb-1">
                           {feature.title}
                         </h4>
-                        <p className="text-sm text-slate-600 dark:text-slate-300">
+                        <p className="text-sm text-slate-300 leading-relaxed font-mono">
                           {feature.desc}
                         </p>
                       </div>
@@ -1040,11 +982,8 @@ export default function FeaturedProjects() {
 
               {/* Tech Stack */}
               <div className="mb-8">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <Code2
-                    className="h-5 w-5"
-                    style={{ color: selectedProject.accent }}
-                  />{" "}
+                <h3 className="text-lg sm:text-xl font-semibold font-mono mb-4 flex items-center gap-2 text-white">
+                  <Code2 className="h-5 w-5 text-blue-400" />
                   Tech Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -1052,8 +991,7 @@ export default function FeaturedProjects() {
                     <Badge
                       key={tech}
                       variant="outline"
-                      className="text-xs px-3 py-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-600"
-                      style={{ animationDelay: `${100 + index * 30}ms` }}
+                      className="text-xs px-3 py-1.5 bg-slate-800/50 border-slate-700/50 text-slate-300 font-mono"
                     >
                       {tech}
                     </Badge>
@@ -1063,42 +1001,37 @@ export default function FeaturedProjects() {
 
               {/* Highlights */}
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 flex items-center gap-2 text-slate-800 dark:text-white">
-                  <TrendingUp
-                    className="h-5 w-5"
-                    style={{ color: selectedProject.accent }}
-                  />{" "}
+                <h3 className="text-lg sm:text-xl font-semibold font-mono mb-4 flex items-center gap-2 text-white">
+                  <TrendingUp className="h-5 w-5 text-blue-400" />
                   Highlights
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   {selectedProject.highlights.map((highlight, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 text-slate-700 dark:text-slate-200"
+                      className="flex items-start gap-3 text-slate-300 font-mono"
                     >
-                      <div
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: selectedProject.accent }}
-                      ></div>
-                      <span className="text-sm">{highlight}</span>
+                      <div className="mt-1.5 w-2 h-2 rounded-full flex-shrink-0 bg-blue-500"></div>
+                      <span className="text-sm leading-relaxed">
+                        {highlight}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Footer Actions */}
-              <div className="flex justify-end gap-3 mt-8 pt-4 border-t border-slate-200 dark:border-slate-700">
+              <div className="flex justify-end gap-3 mt-8 pt-4 border-t border-slate-700/50 dark:border-slate-700/50">
                 <Button
                   variant="outline"
                   onClick={() => setIsSectionsOpen(false)}
-                  className="border-slate-300 dark:border-slate-600"
+                  className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:border-blue-500/50 font-mono"
                 >
                   Close
                 </Button>
                 <Button
                   onClick={() => setIsSectionsOpen(false)}
-                  className="text-white border-0"
-                  style={{ backgroundColor: selectedProject.accent }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white border-0 hover:opacity-90 transition-opacity font-mono"
                 >
                   Done
                 </Button>
