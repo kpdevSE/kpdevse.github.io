@@ -27,6 +27,40 @@ export default function ExperienceSection() {
 
   const experiences = [
     {
+      role: "Freelance Fullstack Developer",
+      company: "Self-employed",
+      period: "2024 - Present",
+      location: "Remote / Sri Lanka",
+      type: "Freelance",
+      responsibilities: [
+        "Delivering custom frontend, backend, and fullstack web applications for clients",
+        "Collaborating directly with clients to gather requirements and iterate quickly",
+        "Designing responsive UI/UX and ensuring smooth integrations between services",
+        "Deploying, monitoring, and maintaining production-ready solutions",
+      ],
+      tech: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "PHP",
+        "Git",
+        "GitHub",
+        "Vercel",
+      ],
+      achievements: [
+        "Built end-to-end applications covering UI, API, and database layers",
+        "Delivered multiple production deployments with fast turnaround",
+        "Maintained long-term client relationships through reliable delivery",
+      ],
+      icon: Briefcase,
+      gradient: "from-blue-500 to-cyan-500",
+    },
+    {
       role: "Intern Fullstack Software Engineer",
       company: "Lakion",
       period: "2023 - 2024",

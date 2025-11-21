@@ -57,7 +57,7 @@ export default function FloatingSocialButtons() {
     {
       icon: Globe,
       label: "Zentrix",
-      href: "https://zentrix-solution.vercel.app/",
+      href: "https://zentrix-906swjywp-kanishkapasis-projects.vercel.app/",
       color: "bg-pink-600 hover:bg-pink-700 border-pink-500",
       angle: angles[5], // 300° - Bottom-right
     },
